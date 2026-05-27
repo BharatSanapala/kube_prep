@@ -13,7 +13,7 @@ spec:
     metadata:
       name: mydeply
       labels:
-        env: testing
+        env: prod
     spec:
       containers:
         - name: my-cont
