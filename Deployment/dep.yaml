@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-dep
   annotatisons:
-    description: "v-1.0"
+    kubernetes.io/change-cause: "v-1.0"
 spec:
   replicas: 3
   selector:
