@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: http
+          image: shaikmustafa/paytm:bus
           ports:
             - containerPort: 80
