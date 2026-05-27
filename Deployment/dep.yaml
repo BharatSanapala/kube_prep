@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-dep
   annotations:
-    kubernetes.io/change-cause: "v-1.0"
+    kubernetes.io/change-cause: "v-2.0"
 spec:
   replicas: 3
   selector:
@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: nginx
+          image: http
           ports:
             - containerPort: 80
