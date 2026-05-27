@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicationController
+metadata:
+  name: my-rc
+spec:
+  template:
+    metadata:
+      name: my-templ
+      lebels:
+        env: prod
+    spec:
+      containers:
+        - name: my-cont
+          image: nginx
+          ports:
+            - containerPort: 80 
+          
