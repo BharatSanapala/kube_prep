@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-dep
-  annotatons:
+  annotatisons:
     description: "v-1.0"
 spec:
   replicas: 3
