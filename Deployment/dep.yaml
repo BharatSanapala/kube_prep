@@ -21,7 +21,7 @@ spec:
 
   template:
     metadata:
-      name: mydeply
+      name: my-deployment
       labels:
         env: testing
         tier: "3"
