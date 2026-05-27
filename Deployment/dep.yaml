@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-dep
   annotations:
-    kubernetes.io/change-cause: "v-3.0"
+    kubernetes.io/change-cause: "v-4.0"
 spec:
   replicas: 3
   selector:
@@ -13,12 +13,19 @@ spec:
         values:
           - testing
           - prod
+
+      - key: tier
+        operator: In
+        values:
+          - "3"
+          
   template:
     metadata:
       name: mydeply
       labels:
-        env: prod
         env: testing
+        tier: "3"
+  
     spec:
       containers:
         - name: my-cont
