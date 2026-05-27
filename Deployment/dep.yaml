@@ -18,6 +18,7 @@ spec:
       name: mydeply
       labels:
         env: prod
+        env: testing
     spec:
       containers:
         - name: my-cont
