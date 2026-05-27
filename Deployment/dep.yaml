@@ -7,8 +7,12 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLabels:
-      env: prod
+    matchExpressions:
+      - key: env
+        operator: In
+        values:
+          - testing
+          - prod
   template:
     metadata:
       name: mydeply
