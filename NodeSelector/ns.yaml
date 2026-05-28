@@ -3,10 +3,6 @@ kind: Pod
 metadata:
   name: my-pod
 spec:
-  template:
-    metadata:
-      matchLabels:
-        env: dev
     spec:
       nodeSelector:
         type: t3.small
