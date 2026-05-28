@@ -3,11 +3,10 @@ kind: Pod
 metadata:
   name: my-pod
 spec:
-    spec:
-      nodeSelector:
-        type: t3.small
-      containers:
-        - name: my-cont
-          image: nginx
-          ports:
-            - contaierPort: 80
+    nodeSelector:
+      type: t3.small
+    containers:
+      - name: my-cont
+        image: nginx
+        ports:
+          - contaierPort: 80
