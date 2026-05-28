@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-ns-deployment
+  namespace: test
+spec:
+  replicas: 3
+  template:
+    selector:
+      matchLabels:
+        env: test
+    spec:
+      containers:
+        - name: my-cont
+          image: nginx
+          ports:
+            - containerPort: 80
