@@ -5,9 +5,12 @@ metadata:
   namespace: test
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      env: test
   template:
-    selector:
-      matchLabels:
+    metadata:
+      labels:
         env: test
     spec:
       containers:
