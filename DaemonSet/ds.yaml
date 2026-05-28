@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-      app: spy
+        app: spy
     spec:
       containers:
         - name: my-spy-cont 
