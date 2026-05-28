@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-ds
+spec:
+  selector:
+    matchLabels:
+      app: spy
+    template:
+      metadata:
+        labels:
+          type: spy
+      spec:
+        containers:
+          - name: my-spy-cont
+            image: nginx 
+            ports:
+              - containerPort: 80
