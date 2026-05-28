@@ -9,4 +9,4 @@ spec:
       - name: my-cont
         image: nginx
         ports:
-          - contaierPort: 80
+          - containerPort: 80
