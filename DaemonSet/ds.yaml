@@ -9,10 +9,10 @@ spec:
     template:
       metadata:
         labels:
-          type: spy
+          app: spy
       spec:
         containers:
-          - name: my-spy-cont
+          - name: my-spy-cont 
             image: nginx 
             ports:
               - containerPort: 80
