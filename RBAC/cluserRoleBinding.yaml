@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.io/v1
+kind: ClusterRoleBinding
+metdata:
+  name: node-reader-binding
+subjects:
+  - kind: User
+    name: developer
+
+roleRef:
+  kind: ClusterRole
+  name: node-reader
+  apiGroup: rbac.authorization.io
