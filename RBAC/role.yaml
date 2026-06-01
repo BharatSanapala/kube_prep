@@ -4,8 +4,8 @@ metadata:
   name: pod-reader
   namespace: dev
 rules:
-  - apiGroups: [""]
-    resources: ["pods"]
+  - apiGroups: ["","apps"]
+    resources: ["pods","daemonsets"]
     verbs:
       - get
       - list
