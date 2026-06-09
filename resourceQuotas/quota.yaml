@@ -15,4 +15,4 @@ spec:
 
     persistentvolumeclaims: '10'
 
-    requests.storage: 100Gi
+    requests.storage: 100Gi 
