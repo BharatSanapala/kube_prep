@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-rolling-update
+  namespace: dev
+spec:
+  replicas: 4 
+
+  strategy:
+    type: RollingUpdate
+
+  selector:
+    matchLabels:
+      env: dev
+
+  template:
+    metadata:
+      labels:
+        env: dev
+      spec:
+        containers:
+          - name: my-cont
+            image: shaikmustafa/paytm:bus
+            ports:
+             - containerPort:: 80
+             
