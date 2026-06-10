@@ -1,13 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-rolling-update
-  namespace: dev
+  name: myrs
+  annotations:
+    kubernetes.io/change-cause: "updated image to v3"
 spec:
   replicas: 4 
 
   strategy:
     type: RollingUpdate
+
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
 
   selector:
     matchLabels:
@@ -17,10 +22,9 @@ spec:
     metadata:
       labels:
         env: dev
-      spec:
-        containers:
-          - name: my-cont
-            image: shaikmustafa/paytm:bus
-            ports:
-             - containerPort:: 80
-             
+    spec:
+       containers:
+        - name: my-cont
+          image: shaikmustafa/paytm:movie
+          ports:
+            - containerPort: 80
