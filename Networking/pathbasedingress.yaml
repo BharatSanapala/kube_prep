@@ -1,25 +1,30 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: path-based-ingress
+  name: jenkins-ingress
 spec:
   ingressClassName: nginx
-
   rules:
-  - http:
-      paths:
-        - path: /app1
-          pathType: Prefix
-          backend:
-            service:
-              name: app1-service
-              port:
-                number: 80
 
-        - path: /app2
-          pathType: Prefix
-          backend:
-            service:
-              name: app2-service
-              port:
-                number: 80
+    - host: jenkins.buildwithbharat.online 
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: myjenkins
+                port:
+                  number: 8080
+
+
+    - host: movie.buildwithbharat.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: movie-service
+                port:
+                  number: 80
