@@ -1,0 +1,17 @@
+apiVersion: kubernetes.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: backend-egress
+spec:
+  podSelector:
+    matchLabels:
+      app: backend
+  
+  policyTypes:
+    - Egress
+
+  Egress:
+    - to
+      - podSelector:
+          matchLabels:
+            app: database 
