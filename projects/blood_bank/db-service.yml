@@ -1,0 +1,14 @@
+apiVerion: v1
+kind: Service
+metadata:
+  name: db-service
+spec:
+  ClusterIP: None
+  selector:
+    app: bankapp-statefulset
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+
+  
